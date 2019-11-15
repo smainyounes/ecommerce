@@ -6,3 +6,11 @@
 body {
   padding-top: 56px;
 }
+
+img {
+	max-width: 100%;
+}
+
+.main-image {
+  margin-bottom: 0.75em;
+}
