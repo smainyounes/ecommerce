@@ -8,11 +8,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Detail</title>
+  <title>Contact</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
 
@@ -37,7 +38,7 @@
 	        <li class="nav-item">
 	          <a class="nav-link" href="#">Services</a>
 	        </li>
-	        <li class="nav-item">
+	        <li class="nav-item active">
 	          <a class="nav-link" href="#">Contact</a>
 	        </li>
 	      </ul>
@@ -45,38 +46,49 @@
 	  </div>
 	</nav>
 
-	<div class="container-fluid mt-4 px-5">
-		<div class="row">
-			<div class="col-md-6 p-0 border mb-2">
-				<div class="main-image">
-				  <img src="img/exemples/9.jpg" alt="Placeholder" class="custom">
-				</div>
-				<div class="row pl-2 thumbnails">
-					<div class="col-2 p-2">
-						<a href="img/exemples/9.jpg"><img src="img/exemples/9.jpg" alt="Thumbnails"></a>
-					</div>
-					<div class="col-2 p-2">
-						<a href="img/exemples/10.jpg"><img src="img/exemples/10.jpg" alt="Thumbnails"></a>
-					</div>
-					<div class="col-2 p-2">
-						<a href="img/exemples/10.jpg"><img src="img/exemples/10.jpg" alt="Thumbnails"></a>
-					</div>
-					<div class="col-2 p-2">
-						<a href="img/exemples/10.jpg"><img src="img/exemples/10.jpg" alt="Thumbnails"></a>
-					</div>
-				</div>
-			</div>
+	<div class="container">
+		<h1 class="text-center">Contactez-Nous</h1>
+		<div class="row my-2 py-4">
 			<div class="col-md-6">
-				<h2>Item one</h2>
-				<div class="h4">Prix : 12000da</div>
+				<form>
+				  <div class="form-group">
+				    <label class="h5" for="exampleFormControlInput1">Nom complet</label>
+				    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom Prenom" required>
+				  </div>
+				  <div class="form-group">
+				    <label class="h5" for="exampleFormControlInput1">Numero Tel</label>
+				    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Numero Tel" required>
+				  </div>
+				  <div class="form-group">
+				    <label class="h5" for="exampleFormControlTextarea1">Message</label>
+				    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+				  </div>
+				  <button class="btn btn-primary">Envoyer</button>
+				</form>
+			</div>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+			<div class="col-md-6 py-5">
+				<table class="mb-5" width="100%">
+				  <tr>
+				    <td align="center" rowspan="3" valign="top" width="20%"><i class="fa fa-paper-plane fa-2x text-primary"></i></td>
+				    <td class="h2 pb-2">Nos Contact</td>
+				  </tr>
+				  <tr>
+				    <td>Email: support@exemple.com</td>
+				  </tr>
+				  <tr>
+				    <td>Telephone: 0123456789</td>
+				  </tr>
+				</table>
+				<table class="mb-5" width="100%">
+				  <tr>
+				    <td align="center" rowspan="3" valign="top" width="20%"><i class="fa fa-map-marker-alt fa-2x text-primary"></i></td>
+				    <td class="h2 pb-2">Address</td>
+				  </tr>
+				  <tr>
+				    <td>Blida - Blida</td>
+				  </tr>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -90,14 +102,6 @@
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="js/jquery.simpleGal.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script>
-	$(document).ready(function () {
-	  $('.thumbnails').simpleGal({
-	    mainImage: '.custom'
-	  });
-	});
-	</script>
 </body>
 </html>
