@@ -32,7 +32,13 @@
 	          <a class="nav-link active" href="#">List Produits</a>
 	        </li>
 	        <li class="nav-item">
+	          <a class="nav-link" href="#">Categories</a>
+	        </li>
+	        <li class="nav-item">
 	          <a class="nav-link" href="#">Messagerie</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="btn btn-secondary" href="#">Deconnecter</a>
 	        </li>
 	      </ul>
 	    </div>
@@ -41,9 +47,12 @@
 
 	<div class="container">
 		<div class="text-center h1">List des Produits</div>
-		<div class="row">
-			<div class="col">
-				<div class="card h-100">
+		<div class="container text-center mt-4">
+			<button class="btn btn-primary btn-lg btn-block">Ajouter</button>
+		</div>
+		<div class="row my-4">
+			<div class="col-lg-4 col-md-6 my-2">
+				<div class="card mx-auto h-100" style="width: 90%;">
 				  <a href="#"><img class="card-img-top" src="../img/exemples/1.jpg" alt=""></a>
 				  <div class="card-body">
 				    <h4 class="card-title">
@@ -51,9 +60,13 @@
 				    </h4>
 				    
 				    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+				    <h5 class="">12 000 DA</h5>
+
 				  </div>
 				  <div class="card-footer">
-				    <h5 class="text-center">12 000 DA</h5>
+				  	<button class="btn btn-danger">Supprimer</button>
+				  	<button class="btn btn-warning">Modifier</button>
+
 				  </div>
 				</div>
 			</div>
