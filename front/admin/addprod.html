@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>List Produits</title>
+  <title>Ajouter Nouveau Produit</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,31 +46,51 @@
 	</nav>
 
 	<div class="container">
-		<div class="text-center h1">List des Produits</div>
-		<div class="container text-center mt-4">
-			<a class="btn btn-primary btn-lg btn-block" href="addprod.html">Ajouter</a>
-		</div>
-		<div class="row my-4">
-			<div class="col-lg-4 col-md-6 my-2">
-				<div class="card mx-auto h-100" style="width: 90%;">
-				  <a href="#"><img class="card-img-top" src="../img/exemples/1.jpg" alt=""></a>
-				  <div class="card-body">
-				    <h4 class="card-title">
-				      <a href="#">Item Name</a>
-				    </h4>
-				    
-				    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-				    <h5 class="">12 000 DA</h5>
-
-				  </div>
-				  <div class="card-footer">
-				  	<button class="btn btn-danger">Supprimer</button>
-				  	<button class="btn btn-warning">Modifier</button>
-
-				  </div>
+		<!-- Form -->
+		<form class="container shadow p-3 my-5">
+			<!-- alert success -->
+			<div class="container">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+				  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
 				</div>
 			</div>
-		</div>
+
+			<!-- alert error -->
+			<div class="container">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+			</div>
+		  <div class="form-group">
+		    <label for="exampleFormControlInput1">Nom du Produit</label>
+		    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom du Produit">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlSelect1">Categorie</label>
+		    <select class="form-control" id="exampleFormControlSelect1">
+		    	<option>Meubles</option>
+		    	<option>Electromenager</option>
+		    </select>
+		  </div>
+		  <div class="form-group custom-file">
+		    <input type="file" class="custom-file-input" id="customFile" multiple="">
+		    <label class="custom-file-label" for="customFile">Images du Produit</label>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlTextarea1">Description</label>
+		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		  </div>
+
+		  <div class="form-group text-center">
+		  	<a href="#" class="btn btn-primary">Submit</a>
+		  </div>
+		</form>
 	</div>
 
 	<!-- Footer -->
