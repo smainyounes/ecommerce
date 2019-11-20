@@ -3,8 +3,10 @@
 	include 'includes/autoloader.inc.php';
 
 	try {
-		$db = new controller_category();
-		echo "works";
+		$test = new view_home();
+
+		$test->loadpage();
+
 	} catch (Exception $e) {
 		echo e;
 	}

@@ -10,6 +10,11 @@
 			$this->db = new model_database();
 		}
 
+		public function test()
+		{
+			echo "test from category controller\n";
+		}
+
 		/**
 		 *  getters
 		 */

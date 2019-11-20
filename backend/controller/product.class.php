@@ -12,6 +12,11 @@
 			$this->db = new model_database();
 		}
 
+		public function test()
+		{
+			echo "test from product controller\n";
+		}
+
 		/*
 		 * getter methods 
 		 */
