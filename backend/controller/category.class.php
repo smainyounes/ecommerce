@@ -2,10 +2,10 @@
 	/**
 	 *  all category methods are here
 	 */
-	class ClassName 
+	class controller_category 
 	{
 		private $db;
-		function __construct(argument)
+		function __construct()
 		{
 			$this->db = new model_database();
 		}

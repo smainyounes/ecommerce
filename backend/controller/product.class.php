@@ -4,7 +4,7 @@
 	 * all products related methods are here
 	 */
 
-	class controller_Product{
+	class controller_product{
 		private $db;
 
 		function __construct()
