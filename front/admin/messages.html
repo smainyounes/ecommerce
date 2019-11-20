@@ -17,7 +17,7 @@
   <link href="../css/shop-homepage.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column">
 	
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -48,58 +48,60 @@
 	  </div>
 	</nav>
 
-  <div class="container py-2">
-    <div class="h1 text-center mb-3">Messagerie</div>
-    <table class="table table-hover table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Nom complet</th>
-          <th scope="col">Telephone</th>
-          <th scope="col">Message</th>
-          <th scope="col">Date heur</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">James Maine</th>
-          <td>0123456789</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor ...</td>
-          <td>12/12/12 12:12</td>
-          <td align="center">
-            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-            <button class="btn btn-danger my-1">Supprimer</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">James Maine</th>
-          <td>0123456789</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor ...</td>
-          <td>12/12/12 12:12</td>
-          <td align="center">
-            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-            <button class="btn btn-danger my-1">Supprimer</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">James Maine</th>
-          <td>0123456789</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor ...</td>
-          <td>12/12/12 12:12</td>
-          <td align="center">
-            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-            <button class="btn btn-danger my-1">Supprimer</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div id="page-content">
+    <div class="container py-2">
+      <div class="h1 text-center mb-3">Messagerie</div>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Nom complet</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Message</th>
+            <th scope="col">Date heur</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">James Maine</th>
+            <td>0123456789</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor ...</td>
+            <td>12/12/12 12:12</td>
+            <td align="center">
+              <!-- <button class="btn btn-warning my-1">Afficher</button> -->
+              <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
+              <button class="btn btn-danger my-1">Supprimer</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">James Maine</th>
+            <td>0123456789</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor ...</td>
+            <td>12/12/12 12:12</td>
+            <td align="center">
+              <!-- <button class="btn btn-warning my-1">Afficher</button> -->
+              <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
+              <button class="btn btn-danger my-1">Supprimer</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">James Maine</th>
+            <td>0123456789</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor ...</td>
+            <td>12/12/12 12:12</td>
+            <td align="center">
+              <!-- <button class="btn btn-warning my-1">Afficher</button> -->
+              <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
+              <button class="btn btn-danger my-1">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
+    </div>
   </div>
 
     <!-- Modal -->
@@ -128,7 +130,7 @@
       </div>
     </div>
 	<!-- Footer -->
-	<footer class="py-5 bg-dark">
+	<footer class="py-5 bg-dark" id="sticky-footer">
 	  <div class="container">
 	    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
 	  </div>
