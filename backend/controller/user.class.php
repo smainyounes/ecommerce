@@ -12,6 +12,10 @@
 			$this->db = new model_database();
 		}
 
+		public function test()
+		{
+			echo "test from user controller <br>";
+		}
 
 		public function login()
 		{

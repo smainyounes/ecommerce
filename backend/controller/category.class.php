@@ -12,7 +12,7 @@
 
 		public function test()
 		{
-			echo "test from category controller\n";
+			echo "test from category controller <br>";
 		}
 
 		/**

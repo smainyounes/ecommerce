@@ -13,6 +13,11 @@
 			$this->db = new model_database();
 		}
 
+		public function test()
+		{
+			echo "test from message controller <br>";
+		}
+
 		/**
 		 * getters
 		 */

@@ -14,7 +14,7 @@
 
 		public function test()
 		{
-			echo "test from product controller\n";
+			echo "test from product controller <br>";
 		}
 
 		/*
