@@ -50,11 +50,14 @@
 			      </div>
 			      <div class="tab-pane fade pt-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 			        <div class="h3 text-center">Changer les infos</div>
-			        <div class="form-group w-75 text-center mx-auto">
-			          <input type="text" class="form-control text-center my-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
-			          <input type="text" class="form-control text-center my-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telephone">
-			          <button class="btn btn-primary">Confirmer</button>
-			        </div>
+			        <form>
+			        	<div class="form-group w-75 text-center mx-auto">
+			        	  <input type="text" class="form-control text-center my-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
+			        	  <input type="text" class="form-control text-center my-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telephone">
+			        	  <input type="email" class="form-control text-center my-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+			        	  <button class="btn btn-primary">Confirmer</button>
+			        	</div>
+			        </form>
 			      </div>
 			    </div>
 			  </div>

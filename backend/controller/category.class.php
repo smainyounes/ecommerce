@@ -21,7 +21,8 @@
 
 		public function getall()
 		{
-			# code...
+			$this->db->query("SELECT * FROM category");
+			return $this->db->resultSet();
 		}
 
 		/**

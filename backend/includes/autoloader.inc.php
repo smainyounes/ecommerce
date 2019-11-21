@@ -1,5 +1,6 @@
 <?php 
 
+include dirname(dirname(dirname(__FILE__)))."/backend/helpers/helpers.php";
 
 spl_autoload_register("myloader");
 
