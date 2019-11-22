@@ -102,7 +102,7 @@
 			      		</div>
 			      		<?php endforeach; ?>
 			      	<?php else: ?>
-			      		<div class="h2 text-center p-5">no products</div>
+			      		<div class="col-12 h2 text-center p-5">no products</div>
 			      	<?php endif ?>
 
 			      </div>

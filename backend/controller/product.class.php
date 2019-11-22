@@ -54,7 +54,27 @@
 
 		public function getsingle($id_prod)
 		{
-			# code...
+			$this->db->query("SELECT * FROM products WHERE id_prod = :id");
+			$this->db->bind(":id",strip_tags($id_prod));
+
+			try {
+				return $this->db->single();
+			} catch (Exception $e) {
+				return NULL;
+			}
+		}
+
+		public function getimages($id_prod)
+		{
+			$this->db->query("SELECT * FROM images WHERE id_product = :id");
+			$this->db->bind(":id",strip_tags($id_prod));
+
+			try {
+				return $this->db->resultSet();
+			} catch (Exception $e) {
+				return NULL;
+			}
+
 		}
 
 		/*
