@@ -22,14 +22,31 @@
 		 * getters
 		 */
 
+		public function getinfos()
+		{
+			$this->db->query("SELECT * FROM contact");
+			return $this->db->single();
+		}
+
 		public function getaddress()
 		{
-			# code...
+			$this->db->query("SELECT address FROM contact");
+			$address = $this->db->single();
+			return $address->address;
 		}
 
 		public function getnumber()
 		{
-			# code...
+			$this->db->query("SELECT tel FROM contact");
+			$tel = $this->db->single();
+			return $tel->tel;
+		}
+
+		public function getemail()
+		{
+			$this->db->query("SELECT email FROM contact");
+			$email = $this->db->single();
+			return $email->email;
 		}
 
 		/**

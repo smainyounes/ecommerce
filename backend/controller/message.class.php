@@ -38,7 +38,18 @@
 
 		public function newmsg()
 		{
-			# code...
+			$this->db->query("INSERT INTO `messages`(`nom_complet`, `tel`, `message`) VALUES (:name, :tel, :msg)");
+			$this->db->bind(":name", strip_tags($_POST['fullname']));
+			$this->db->bind(":tel", strip_tags($_POST['number']));
+			$this->db->bind(":msg", strip_tags($_POST['message']));
+
+			try {
+				$this->db->execute();
+				return true;
+			} catch (Exception $e) {
+				return false;
+			}
+
 		}
 
 		public function deletemsg($id_msg)
