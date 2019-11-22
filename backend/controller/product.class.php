@@ -38,9 +38,9 @@
 		public function getbycateg($id_categ)
 		{
 			$sql = "SELECT *
-						FROM products, images
-						WHERE products.id_prod = images.id_product
-						AND id_category = :id
+						FROM products LEFT JOIN images
+						ON products.id_prod = images.id_product
+						WHERE id_category = :id
 						AND NOT EXISTS(
 						    SELECT * 
 						    FROM images as T2BIS -- just an alias table

@@ -40,9 +40,14 @@
                     Categories
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="index.php?categ=1">Tout</a>
-                    <a class="dropdown-item" href="index.php?categ=2">Meubles</a>
-                    <a class="dropdown-item" href="index.php?categ=3">Electromenager</a>
+                    <a class="dropdown-item" href="index.php">Tout</a>
+                    <?php 
+                      $obj = new controller_category();
+                      $categlist = $obj->getall();
+                     ?>
+                    <?php foreach($categlist as $categ): ?>
+                    <a class="dropdown-item" href="index.php?categ=<?php echo($categ->id_categ) ?>"><?php echo $categ->nom_category; ?></a>
+                    <?php endforeach; ?>
                   </div>
           </li>
           <li class="nav-item <?php if($page === 'Contact') echo('active')?>">

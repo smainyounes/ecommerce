@@ -19,7 +19,22 @@
 
 		public function login()
 		{
-			# code...
+			$this->db->query("SELECT * FROM users WHERE username = :name");
+			$this->db->bind(":name", strip_tags($_POST['username']));
+
+			try {
+				$result = $this->db->single();
+				if ($result) {
+					if($result->password === strip_tags($_POST['password'])){
+						return true;
+					}
+				}
+				
+			} catch (Exception $e) {
+				return false;
+			}
+			return false;
+
 		}
 
 		public function changeusername()
@@ -28,6 +43,11 @@
 		}
 
 		public function changepassword()
+		{
+			# code...
+		}
+
+		public function logout()
 		{
 			# code...
 		}

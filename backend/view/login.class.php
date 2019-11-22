@@ -13,7 +13,7 @@
 			$this->user = new controller_user();
 		}
 
-		public function loadpage()
+		public function loadpage($msg = null)
 		{
 			?>
 
@@ -139,46 +139,46 @@
 					}
 
 				</style>
+				<?php if(isset($msg)): ?>
+				<div class="container mt-5">
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  <strong>Error</strong> username ou password incorrect.
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+				</div>
+				<?php endif; ?>
 				<div class="container">
 				    <div class="row">
 				      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
 				        <div class="card card-signin my-5">
 				          <div class="card-body text-center">
 				          	<img src="img/logo_black.png" class="card-title" width="150px" alt="Login">
-				            <form class="form-signin">
+				            <form class="form-signin" method="POST">
 				              <div class="form-label-group">
-				                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-				                <label for="inputEmail">Email address</label>
+				                <input type="text" id="user" class="form-control" placeholder="username" name="username" required autofocus>
+				                <label for="user">username</label>
 				              </div>
 
 				              <div class="form-label-group">
-				                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
 				                <label for="inputPassword">Password</label>
 				              </div>
 
-				              <div class="custom-control custom-checkbox mb-3">
-				                <input type="checkbox" class="custom-control-input" id="customCheck1">
-				                <label class="custom-control-label" for="customCheck1">Remember password</label>
-				              </div>
-				              <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button> -->
-				              <a href="admin.html" class="btn btn-lg btn-primary btn-block text-uppercase">Login</a>
+				              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="login">Login</button>
 				            </form>
 				          </div>
 				        </div>
 				      </div>
 				    </div>
-				  </div>
-
-
-
-
-
+				</div>
 
 				<!-- Optional JavaScript -->
 				<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+				<script src="../vendor/jquery/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-				<script src="js/bootstrap.min.js"></script>
+				<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 			</body>
 			</html>
 			
