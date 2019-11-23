@@ -13,8 +13,11 @@
 			$this->category = new controller_category();
 		}
 
-		public function loadpage()
+		public function loadpage($res = null)
 		{
+
+			$data = $this->category->getall();
+
 			?>
 
 				<!-- list -->
@@ -25,32 +28,46 @@
 			          Add new Category
 			        </button>
 			      </div>
+
+			      <?php if(isset($res)): ?>
+			      	<?php if($res): ?>
+			      		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			      		  <strong>Success</strong> Votre category a été bien ajouter.
+			      		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			      		    <span aria-hidden="true">&times;</span>
+			      		  </button>
+			      		</div>
+			      	<?php else: ?>
+			      		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			      		  <strong>Erreur</strong> Votre category n'a pas été ajouter.
+			      		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			      		    <span aria-hidden="true">&times;</span>
+			      		  </button>
+			      		</div>
+			      	<?php endif; ?>
+			      <?php endif; ?>
+			      <?php if($data): ?>
 			      <table class="table table-hover table-bordered">
 			        <thead>
 			          <tr>
+			            <th scope="col">id</th>
 			            <th scope="col">Nom Categorie</th>
-			            <th scope="col">Modifier</th>
 			            <th scope="col">Supprimer</th>
 			          </tr>
 			        </thead>
 			        <tbody>
-			          <tr>
-			            <td>Meuble</td>
-			            <td><button class="btn btn-warning">Modifier</button></td>
-			            <td><button class="btn btn-danger">Supprimer</button></td>
-			          </tr>   
-			          <tr>
-			            <td>Meuble</td>
-			            <td><button class="btn btn-warning">Modifier</button></td>
-			            <td><button class="btn btn-danger">Supprimer</button></td>
-			          </tr>
-			          <tr>
-			            <td>Meuble</td>
-			            <td><button class="btn btn-warning">Modifier</button></td>
-			            <td><button class="btn btn-danger">Supprimer</button></td>
-			          </tr>       
+			        	<?php foreach($data as $row): ?>
+				          <tr>
+				            <td><?php echo $row->id_categ; ?></td>
+				            <td><?php echo $row->nom_category; ?></td>
+				            <td><button class="btn btn-danger">Supprimer</button></td>
+				          </tr>   
+      					<?php endforeach; ?>
 			        </tbody>
 			      </table>
+			      <?php else: ?>
+
+			      <?php endif; ?>
 			    </div>
 			  </div>
 			    
@@ -65,16 +82,18 @@
 			              <span aria-hidden="true">&times;</span>
 			            </button>
 			          </div>
-			          <div class="modal-body">
-			              <div class="form-group">
-			                <label for="exampleFormControlInput1">Nom Categorie</label>
-			                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom Categorie">
-			              </div>
-			          </div>
-			          <div class="modal-footer">
-			            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			            <button type="button" class="btn btn-primary">Ajouter</button>
-			          </div>
+			          <form method="POST">
+			          	<div class="modal-body">
+			          	    <div class="form-group">
+			          	      <label for="exampleFormControlInput1">Nom Categorie</label>
+			          	      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom Categorie" name="categ_name">
+			          	    </div>
+			          	</div>
+			          	<div class="modal-footer">
+			          	  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			          	  <button type="submit" type="button" class="btn btn-primary" name="newcateg">Ajouter</button>
+			          	</div>
+			          </form>
 			        </div>
 			      </div>
 			    </div>

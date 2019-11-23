@@ -26,8 +26,8 @@
 		//footer
 		include '../../backend/includes/adminfooter.inc.php';
 	}else{
-		echo "doesnt exist";
-		// header("Location: index.php");
+		// echo "doesnt exist";
+		header("Location: index.php");
 	}
 
 	

@@ -8,20 +8,44 @@
 	// header
 	include '../../backend/includes/adminheader.inc.php';
 
+	session_start();
 
+	//cheking if admin logged in
+	if (isset($_SESSION['user'])) {
+		if (isset($_POST['newcateg'])) {
+			// new catgeroy added
+			$categ = new controller_category();
+			$test = $categ->addnew($_POST['categ_name']);
 
-	//starting the view
+			try {
+				$prodlist = new view_category();
+				$prodlist->loadpage($test);
+			} catch (Exception $e) {
+				echo $e;
+			}
+		}else{
+			//starting the view
+			try {
+				$prodlist = new view_category();
 
-	try {
-		$prodlist = new view_category();
+				$prodlist->loadpage();
 
-		$prodlist->loadpage();
+			} catch (Exception $e) {
+				echo $e;
+			}
+		}
+		
 
-	} catch (Exception $e) {
-		echo $e;
+		//footer
+		include '../../backend/includes/adminfooter.inc.php';
+
+	}else{
+		// not logged in
+		header("Location: index.php");
 	}
 
-	//footer
-	include '../../backend/includes/adminfooter.inc.php';
+	
+
+	
 
  ?>

@@ -31,7 +31,17 @@
 
 		public function addnew($name)
 		{
-			# code...
+			$this->db->query("INSERT INTO category(nom_category) VALUES(:name)");
+			$this->db->bind(":name", strip_tags($name));
+
+			try {
+				$this->db->execute();
+				return true;
+			} catch (Exception $e) {
+				echo $e."<br>";
+				return false;
+			}
+
 		}
 
 		public function delete($id_categ)
