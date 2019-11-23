@@ -7,21 +7,29 @@
 
 	// header
 	include '../../backend/includes/adminheader.inc.php';
+ 	
+ 	session_start(); 
 
+	//checking if admin loggedin
+	if (isset($_SESSION['user'])) {
+		//starting the view
 
+		try {
+			$prodlist = new view_prodlist();
 
-	//starting the view
+			$prodlist->loadpage();
 
-	try {
-		$prodlist = new view_prodlist();
+		} catch (Exception $e) {
+			echo $e;
+		}
 
-		$prodlist->loadpage();
-
-	} catch (Exception $e) {
-		echo $e;
+		//footer
+		include '../../backend/includes/adminfooter.inc.php';
+	}else{
+		echo "doesnt exist";
+		// header("Location: index.php");
 	}
 
-	//footer
-	include '../../backend/includes/adminfooter.inc.php';
+	
 
  ?>

@@ -8,7 +8,8 @@
 
 	// checking if user logged in
 	if (isset($_SESSION['user'])) {
-		header("Location: addprod.php");
+
+		header("Location: prodlist.php");
 	}
 
 	// checking if login form is sent
@@ -18,7 +19,7 @@
 		if ($res) {
 			// infos correct
 			$_SESSION['user'] = 1;
-			header("Location: addprod.php");
+			header("Location: prodlist.php");
 		}else{
 			//loading the page with error login
 			try {

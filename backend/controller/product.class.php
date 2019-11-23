@@ -30,7 +30,7 @@
 						    FROM images as T2BIS -- just an alias table
 						    WHERE T2BIS.id_product = products.id_prod -- usual join
 						    AND images.id_img > T2BIS.id_img -- change operator to take the last instead of the first
-						)";
+						) ORDER BY products.id_prod DESC";
 			$this->db->query($sql);
 			return $this->db->resultSet();
 		}
@@ -46,7 +46,7 @@
 						    FROM images as T2BIS -- just an alias table
 						    WHERE T2BIS.id_product = products.id_prod -- usual join
 						    AND images.id_img > T2BIS.id_img -- change operator to take the last instead of the first
-						)";
+						) ORDER BY products.id_prod DESC";
 			$this->db->query($sql);
 			$this->db->bind(":id", strip_tags($id_categ));
 			return $this->db->resultSet();
