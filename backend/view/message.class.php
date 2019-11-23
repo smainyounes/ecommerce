@@ -15,60 +15,43 @@
 
 		public function loadpage()
 		{
+			$data = $this->message->getall();
 			?>
 
 			<div id="page-content">
 			  <div class="container py-2">
 			    <div class="h1 text-center mb-3">Messagerie</div>
-			    <table class="table table-hover table-bordered">
-			      <thead>
-			        <tr>
-			          <th scope="col">Nom complet</th>
-			          <th scope="col">Telephone</th>
-			          <th scope="col">Message</th>
-			          <th scope="col">Date heur</th>
-			          <th scope="col">Action</th>
-			        </tr>
-			      </thead>
-			      <tbody>
-			        <tr>
-			          <th scope="row">James Maine</th>
-			          <td>0123456789</td>
-			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			          tempor ...</td>
-			          <td>12/12/12 12:12</td>
-			          <td align="center">
-			            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-			            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-			            <button class="btn btn-danger my-1">Supprimer</button>
-			          </td>
-			        </tr>
-			        <tr>
-			          <th scope="row">James Maine</th>
-			          <td>0123456789</td>
-			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			          tempor ...</td>
-			          <td>12/12/12 12:12</td>
-			          <td align="center">
-			            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-			            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-			            <button class="btn btn-danger my-1">Supprimer</button>
-			          </td>
-			        </tr>
-			        <tr>
-			          <th scope="row">James Maine</th>
-			          <td>0123456789</td>
-			          <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			          tempor ...</td>
-			          <td>12/12/12 12:12</td>
-			          <td align="center">
-			            <!-- <button class="btn btn-warning my-1">Afficher</button> -->
-			            <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
-			            <button class="btn btn-danger my-1">Supprimer</button>
-			          </td>
-			        </tr>
-			      </tbody>
-			    </table>
+			    <?php if($data): ?>
+			    	<table class="table table-hover table-bordered">
+			    	  <thead>
+			    	    <tr>
+			    	      <th scope="col">Nom complet</th>
+			    	      <th scope="col">Telephone</th>
+			    	      <th scope="col">Message</th>
+			    	      <th scope="col">Date heur</th>
+			    	      <th scope="col">Action</th>
+			    	    </tr>
+			    	  </thead>
+			    	  <tbody>
+			    	  	<?php foreach($data as $row): ?>
+			    	    <tr>
+			    	      <th scope="row"><?php echo $row->nom_complet ?></th>
+			    	      <td><?php echo $row->tel ?></td>
+			    	      <td><?php echo $row->message ?></td>
+			    	      <td><?php echo $row->date_heur ?></td>
+			    	      <td align="center">
+			    	        <!-- <button class="btn btn-warning my-1">Afficher</button> -->
+			    	        <button class="btn btn-warning my-1" data-toggle="modal" data-target="#exampleModalCenter">Afficher</button>
+			    	        <button class="btn btn-danger my-1">Supprimer</button>
+			    	      </td>
+			    	    </tr>
+			    		<?php endforeach; ?>
+			    	  </tbody>
+			    	</table>
+			    <?php else: ?>
+			    	<div class="h2 text-center">Pas de messages</div>
+			    <?php endif; ?>
+
 
 			  </div>
 			</div>

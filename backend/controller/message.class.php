@@ -24,7 +24,13 @@
 
 		public function getall()
 		{
-			# code...
+			$this->db->query("SELECT * FROM messages ORDER BY id DESC");
+			try {
+				
+				return $this->db->resultSet();
+			} catch (Exception $e) {
+				return null;
+			}
 		}
 
 		public function getsingle($id_msg)
