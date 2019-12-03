@@ -81,4 +81,10 @@
       $this->execute();
       return $this->stmt->rowCount();
     }
+
+    //get last inserted id
+    public function LastId()
+    {
+      return $this->dbh->lastInsertId();
+    }
   }

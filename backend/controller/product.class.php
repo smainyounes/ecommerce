@@ -83,7 +83,66 @@
 
 		public function insert()
 		{
-			# code...
+			// inserting product infos
+
+			$this->db->query("INSERT INTO products(id_category, name, description, price) VALUES(:categ, :name, :descr, :price)");
+			$this->db->bind(":categ", strip_tags($_POST['categ']));
+			$this->db->bind(":name", strip_tags($_POST['nomprod']));
+			$this->db->bind(":descr", strip_tags($_POST['descprod']));
+			$this->db->bind(":price", strip_tags($_POST['price']));
+
+			try {
+				$this->db->execute();
+			} catch (Exception $e) {
+				echo $e;
+				return false;
+			}
+
+			// inserting images
+			
+			$idprod = $this->db->LastId();
+			
+			// image mime to be checked 
+			$imagetype = array(image_type_to_mime_type(IMAGETYPE_GIF), image_type_to_mime_type(IMAGETYPE_JPEG),
+			    image_type_to_mime_type(IMAGETYPE_PNG), image_type_to_mime_type(IMAGETYPE_BMP));
+			
+			$FOLDER = "../img/exemples/";
+			$myfile = $_FILES["imgprod"];
+			$keepName = false; // change this for file name.
+			for ($i = 0; $i < count($myfile["name"]); $i++) {
+			    if ($myfile["name"][$i] <> "" && $myfile["error"][$i] == 0) {
+			        // file is ok
+			        echo "file is ok";
+			        if (in_array($myfile["type"][$i], $imagetype)) {
+			            //Set file name
+			            if($keepName) {
+			                $file_name =  $myfile["name"][$i];
+			            } else {
+			                // get extention and set unique name
+			                $file_extention = @strtolower(@end(@explode(".", $myfile["name"][$i])));
+			                $file_name = date("Ymd") . '_' . rand(10000, 990000) . '.' . $file_extention;
+			            }
+			            if (move_uploaded_file($myfile["tmp_name"][$i], $FOLDER . $file_name)) {
+			            	// file moved inserting into the database
+			                $this->db->query("INSERT INTO images(id_product, link) VALUES(:id, :link)");
+			                $this->db->bind(":id", $idprod);
+			                $this->db->bind(":link", $file_name);
+			                try {
+			                	$this->db->execute();
+			                } catch (Exception $e) {
+			                	echo $e;
+			                }
+			            } else {
+			                echo "file not moved";
+			            }
+			        } else {
+			            echo "invalid file type";
+			        }
+			    }
+			}		
+
+			return true;
+
 		}
 
 		public function delete($id_prod)
